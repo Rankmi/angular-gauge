@@ -39,13 +39,27 @@
       backgroundColor: 'rgba(0, 0, 0, 0.1)'
     };
 
-    vm.thresholds = {
-      '0': {color: 'green'},
-      '8': {color: "orange"},
-      '20': {color: 'yellow'},
-      '30': {color: 'coral'},
-      '80': {color: 'red'}
-    }
-    vm.empty = {};
+    // vm.thresholds = {
+    //   '-100': {color: 'red'},
+    //   '-20': {color: "orange"},
+    //   '20': {color: 'green'}
+    // }
+
+    vm.thresholds = [
+      {
+        color: 'red',
+        value: -100
+      },
+      {
+        color: "orange",
+        value: -20
+      },
+      {
+        color: 'green',
+        value: 20
+      }
+    ]
+
+    vm.empty = [];
   }
 }(angular));

@@ -265,11 +265,11 @@
                     return value != undefined && !isNaN(parseFloat(value)) && !isNaN(Number(value));
                 };
 
-                var match = Object.keys(this.options.thresholds)
-                    .filter(function (item) { return isNumber(item) && Number(item) <= value; })
-                    .sort(function(a,b) {return Number(a) > Number(b);}).reverse()[0];
+                var match = this.options.thresholds
+                    .filter(function (item) { return isNumber(item.value) && Number(item.value) <= value; })
+                    .sort(function(a,b) {return Number(a.value) > Number(b.value);}).reverse()[0];
 
-                return match !== undefined ? this.options.thresholds[match].color || this.getForegroundColor() : this.getForegroundColor();
+                return match !== undefined ? match.color || this.getForegroundColor() : this.getForegroundColor();
             },
 
             getLineCap: function () {
@@ -327,7 +327,7 @@
                 scope.labelOnly = angular.isDefined(scope.labelOnly) ? scope.labelOnly : defaults.labelOnly;
                 scope.foregroundColor = angular.isDefined(scope.foregroundColor) ? scope.foregroundColor : defaults.foregroundColor;
                 scope.backgroundColor = angular.isDefined(scope.backgroundColor) ? scope.backgroundColor : defaults.backgroundColor;
-                scope.thresholds = angular.isDefined(scope.thresholds) ? scope.thresholds : {};
+                scope.thresholds = angular.isDefined(scope.thresholds) ? scope.thresholds : [];
                 scope.fractionSize = angular.isDefined(scope.fractionSize) ? scope.fractionSize : defaults.fractionSize;
 
                 var gauge = new Gauge(element, scope);
