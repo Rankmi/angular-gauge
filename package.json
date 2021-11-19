@@ -1,6 +1,6 @@
 {
-  "name": "angularjs-gauge",
-  "version": "2.2.2",
+  "name": "@rankmi/angularjs-gauge",
+  "version": "1.0.0",
   "description": "A Gauge directive for Angular 1.x apps and dashboards",
   "keywords": [
     "angular",
@@ -22,9 +22,9 @@
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/leonardoolivares/angular-gauge.git"
+    "url": "https://github.com/Rankmi/angular-gauge"
   },
-  "author": "Ashish Chopra",
+  "author": "Rankmi",
   "license": "MIT",
   "peerDependencies": {
     "angular": ">= 1.4.14 <= 1.6.x"
